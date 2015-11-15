@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间可以用于区分相同配置的id名称； 还有另外一个作用：mybatis框架可以将dao接口和命名空间进行绑定 -->
+<mapper namespace="fengke.main.domain.model.StrategyRepository">
+	<insert id="insertStrategy">
+		insert into strategy(strategy_name,strategy_placeID,strategy_information,strategy_memberID)
+		values(#{0},#{1},#{2},#{3})
+	</insert>
+	<select id="selectByPlace" resultType="fengke.main.domain.model.Strategy">
+		select * from strategy where strategy_placeID=#{0}
+	</select>
+
+</mapper>

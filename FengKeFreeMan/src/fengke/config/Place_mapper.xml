@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 命名空间可以用于区分相同配置的id名称； 还有另外一个作用：mybatis框架可以将dao接口和命名空间进行绑定 -->
+<mapper namespace="fengke.main.domain.model.PlaceRepsitory">
+	<resultMap type="fengke.main.domain.model.Place" id="place">
+		<id property="place_id" column="place_id" javaType="Integer" jdbcType="INTEGER" />
+		<result property="place_name" column="place_name" javaType="String" jdbcType="CHAR"/>
+		<result property="place_picture" column="place_picture" javaType="String" jdbcType="CHAR"/>
+		<result property="place_provinceID" column="place_provinceID" javaType="Integer" jdbcType="INTEGER"/>
+		<result property="place_information" column="place_information" javaType="String" jdbcType="CHAR"/>
+		<result property="place_type" column="place_type" javaType="Integer" jdbcType="INTEGER"/>
+		<result property="place_cost" column="place_cost" javaType="Integer" jdbcType="INTEGER"/>
+	</resultMap>
+	<select id="selectById" resultType="fengke.main.domain.model.Place">
+		select place_id,place_name,place_picture,place_provinceID,place_information,place_type,place_cost from place where place_id=#{0}
+	</select>
+</mapper>
